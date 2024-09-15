@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-deluge-50 text-deluge-950 text-opacity-80 p1;
+}
+
+@layer utilities {
+  .hero-g1 {
+    background: conic-gradient(#93c5fd, #beadfa, #93c5fd);
+    filter: blur(1rem);
+  }
+  .hero-g2 {
+    background: conic-gradient(#beadfa, #f0abfc, #beadfa);
+    filter: blur(1rem);
+  }
+  .hero-g3 {
+    background: conic-gradient(#beadfa, #f0abfc, #beadfa, #93c5fd, #beadfa);
+    filter: blur(1rem);
+  }
+  .hero-g4 {
+    background: conic-gradient(#beadfa, #f0abfc, #beadfa, #93c5fd, #beadfa);
+  }
+
+  .border-bot {
+    @apply border-b-2 border-deluge border-opacity-10;
+  }
+  @keyframes scroll {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  .f1 {
+    @apply text-4xl sm:text-6xl md:text-7xl lg:text-8xl;
+  }
+
+  .f1-2 {
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  .f2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .f3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .f4 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+
+  .f5 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+
+  .p1 {
+    @apply text-base md:text-xl lg:text-xl;
+  }
+}
+
+@layer components {
+  .navbar {
+    @apply fixed top-0 left-0 z-[9999];
+  }
+
+  .nav-link {
+    @apply flex rounded-2xl justify-center p-1 f5 uppercase text-white;
+  }
+
+  button#mobile-toggle {
+    transform-origin: center;
+  }
+
+  button#mobile-toggle.close div:first-child {
+    @apply absolute translate-y-[.015625rem] rotate-45;
+  }
+  button#mobile-toggle.close div:nth-child(2) {
+    @apply opacity-0;
+  }
+  button#mobile-toggle.close div:last-child {
+    @apply absolute -translate-y-[.015625rem] -rotate-45;
+  }
+  .float {
+    @apply bg-perfume-200 opacity-20 z-10 size-96 rounded-full absolute translate-y-1/4;
+  }
+
+  .hero {
+    @apply aspect-[4/3] grid grid-cols-12 grid-rows-8 overflow-hidden justify-end pt-16;
+  }
+
+  .content {
+    @apply p-4 gap-8 flex flex-col bg-slate-100 md:gap-16;
+  }
+
+  .section-header {
+    @apply flex flex-row items-center gap-1 capitalize font-bold text-deluge-500 after:content-[''] after:h-1 after:flex-1 after:bg-deluge-500 f2;
+  }
+
+  .card {
+    @apply flex gap-4;
+  }
+
+  .card {
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 15%;
+    @apply flex flex-col gap-8 md:gap-16;
+  }
+
+  .subheader {
+    @apply text-deluge text-opacity-80 capitalize font-semibold f3;
+  }
+
+  .img-slider {
+    @apply flex flex-row w-full bg-fil overflow-x-hidden rounded-md md:w-1/3;
+  }
+
+  .img-slider img {
+    @apply aspect-[16/9] opacity-95;
+  }
+
+  .card-item {
+    @apply h-full border-b-2 border-deluge border-opacity-10 hover:border-none;
+  }
+
+  .card-item > a {
+    @apply p1 rounded-md flex flex-col p-4 border-none gap-4 h-full hover:bg-deluge hover:bg-opacity-10;
+  }
+
+  .card-item > a h4 {
+    @apply subheader;
+  }
+
+  .project {
+    @apply flex flex-col gap-4 md:flex-row md:justify-between md:gap-8;
+  }
+  .project:nth-child(odd) {
+    @apply md:flex-row-reverse;
+  }
+  .chip-container {
+    @apply flex flex-row justify-end items-center gap-2 mt-auto;
+  }
+
+  .chip {
+    @apply py-1 px-3 rounded-3xl border border-deluge border-opacity-5 capitalize p1;
+  }
+
+  .chip.red {
+    @apply bg-red-500 text-white;
+  }
+  .chip.yellow {
+    @apply bg-amber-500 text-white;
+  }
+
+  .chip.blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  .card-item > a:hover .chip {
+    @apply bg-white;
+  }
+
+  .card-item > a:hover .chip.red {
+    @apply text-red-500;
+  }
+
+  .card-item > a:hover .chip.yellow {
+    @apply text-amber-500;
+  }
+
+  .card-item > a:hover .chip.blue {
+    @apply text-blue-500;
+  }
+
+  form {
+    @apply flex flex-col gap-2 mt-4 border-bot;
+  }
+
+  form div {
+    @apply flex justify-between p-1;
+  }
+
+  form label {
+    @apply p1 capitalize;
+  }
+
+  form input {
+    @apply rounded-3xl py-1 px-3 border-2 border-deluge border-opacity-5 w-full;
+  }
+}
