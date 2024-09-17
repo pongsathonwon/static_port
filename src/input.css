@@ -13,60 +13,33 @@
     --color-gradient-3: #f0abfc;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-primary-1: 132 120 190;
-      --color-primary-2: 178 169 213;
-      --color-secondary: 37 34 35;
-      --color-neutral: 240 240 240;
-      --color-gradient-1: #474259;
-      --color-gradient-2: #3a495a;
-      /*#4d647d; #3a495a;*/
-      --color-gradient-3: #56415a;
-      /*#77587c; #56415a;*/
-    }
+  body.dark {
+    --color-primary-1: 132 120 190;
+    --color-primary-2: 178 169 213;
+    --color-secondary: 37 34 35;
+    --color-neutral: 240 240 240;
+    --color-gradient-1: #474259;
+    --color-gradient-2: #3a495a;
+    /*#4d647d; #3a495a;*/
+    --color-gradient-3: #56415a;
+    /*#77587c; #56415a;*/
   }
 
   body {
-    @apply text-neutral bg-secondary p1;
+    @apply text-neutral bg-secondary text-base md:text-xl lg:text-xl transition-colors duration-500;
+  }
+  h2 {
+    @apply capitalize font-bold text-primary text-2xl md:text-3xl lg:text-4xl;
+  }
+  h3,
+  h4 {
+    @apply text-primary-2 capitalize font-semibold text-2xl md:text-3xl lg:text-4xl;
   }
 }
 
 @layer utilities {
-  .hero-g1 {
-    background: conic-gradient(
-      var(--color-gradient-2),
-      var(--color-gradient-1),
-      var(--color-gradient-2)
-    );
-    filter: blur(1rem);
-  }
-  .hero-g2 {
-    background: conic-gradient(
-      var(--color-gradient-1),
-      var(--color-gradient-3),
-      var(--color-gradient-1)
-    );
-    filter: blur(1rem);
-  }
-  .hero-g3 {
-    background: conic-gradient(
-      var(--color-gradient-1),
-      var(--color-gradient-3),
-      var(--color-gradient-1),
-      var(--color-gradient-2),
-      var(--color-gradient-1)
-    );
-    filter: blur(1rem);
-  }
-  .hero-g4 {
-    background: conic-gradient(
-      var(--color-gradient-1),
-      var(--color-gradient-3),
-      var(--color-gradient-1),
-      var(--color-gradient-2),
-      var(--color-gradient-1)
-    );
+  .h-break {
+    @apply flex flex-row items-center gap-1 after:content-[''] after:h-1 after:flex-1 after:bg-primary;
   }
 
   .border-bot {
@@ -94,35 +67,20 @@
   .content-ctrl-x {
     @apply flex flex-col gap-small px-4;
   }
-  .f1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
-  }
-
-  .f2 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
-  }
-
-  .f3 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
-  }
-
-  .f4 {
-    @apply text-lg md:text-xl lg:text-2xl;
-  }
-
-  .p1 {
-    @apply text-base md:text-xl lg:text-xl;
-  }
 }
 
 @layer components {
+  /*fixed btn*/
+  .fix-btn {
+    @apply size-8 right-4 z-[9999];
+  }
   /*nav bar style*/
   .navbar {
     @apply fixed top-0 left-0 z-[9999];
   }
 
   .nav-link {
-    @apply flex rounded-2xl justify-center p-1 f4 uppercase text-white;
+    @apply flex rounded-2xl justify-center p-1 uppercase text-white text-lg md:text-xl lg:text-2xl;
   }
   /*small screen menu toggle*/
   button#mobile-toggle {
@@ -148,13 +106,6 @@
     @apply px-4 pb-8 flex flex-col gap-large md:pb-16;
   }
 
-  .section-header {
-    @apply flex flex-row items-center gap-1 capitalize font-bold text-primary after:content-[''] after:h-1 after:flex-1 after:bg-primary f3;
-  }
-  .subheader {
-    @apply text-primary-2 capitalize font-semibold f3;
-  }
-
   .img-slider {
     @apply flex flex-row bg-fil overflow-x-hidden rounded-md;
   }
@@ -163,60 +114,39 @@
     @apply aspect-[16/9] opacity-95 max-h-56;
   }
 
+  .icon {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl hover:scale-110;
+  }
+
   .project {
     @apply flex-res gap-large justify-between;
     &:nth-child(odd) {
       @apply md:flex-row-reverse;
     }
-    .left-section {
-      @apply flex flex-col gap-large md:w-2/3;
-      .card-item {
-        @apply h-full border-bot hover:border-none;
-      }
-      .card-item > a {
-        @apply p1 rounded-md p-4 border-none h-full content-ctrl hover:bg-primary-2/40;
-        div.head {
-          @apply flex justify-between items-center;
-        }
-        h4 {
-          @apply subheader;
-        }
-        p {
-          @apply line-clamp-3 md:line-clamp-none;
-        }
-        .chip-container {
-          @apply flex flex-row justify-end items-center gap-2 mt-auto;
-        }
-      }
-    }
-  }
-
-  .icon {
-    @apply f2 hover:scale-110;
   }
 
   .chip {
-    @apply py-1 px-3 rounded-3xl bg-primary-1 capitalize p1;
-    &.red {
+    @apply py-1 px-3 rounded-3xl bg-primary-1 capitalize;
+    &.chip-red {
       @apply bg-red text-neutral;
     }
-    &.yellow {
+    &.chip-yellow {
       @apply bg-amber text-neutral;
     }
-    &.blue {
+    &.chip-blue {
       @apply bg-blue text-neutral;
     }
   }
 
-  .card-item > a:hover .chip {
+  a:hover .chip {
     @apply bg-secondary text-primary-1;
-    &.red {
+    &.chip-red {
       @apply text-red;
     }
-    &.yellow {
+    &.chip-yellow {
       @apply text-amber;
     }
-    &.blue {
+    &.chip-blue {
       @apply text-blue;
     }
   }
@@ -236,7 +166,7 @@
   }
 
   form label {
-    @apply p1 capitalize;
+    @apply capitalize;
   }
 
   form input {

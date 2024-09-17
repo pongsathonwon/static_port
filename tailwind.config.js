@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
@@ -42,11 +43,6 @@ module.exports = {
             "animation-timing-function": "cubic-bezier(0, 0, 0.2, 1)",
           },
         },
-        slideLeft: {
-          to: {
-            transform: "translateX(-500%)",
-          },
-        },
       },
       animation: {
         "spin-slow": "spin 10s linear infinite",
@@ -54,11 +50,14 @@ module.exports = {
         "spin-slow-delay5": "spin 10s 5s linear infinite",
         "pulse-slow": "pulse 5s linear infinite",
         next: "right 1s infinite",
-        silde: "slideLeft 60s linear infinite",
       },
       backgroundImage: {
         avatar: "url('../asset/avatar.jpg')",
         fil: "linear-gradient(to top, rgba(0,0,0,.2), transparent)",
+        g1: "conic-gradient(var(--color-gradient-2),var(--color-gradient-1),var(--color-gradient-2))",
+        g2: "conic-gradient(var(--color-gradient-1),var(--color-gradient-3),var(--color-gradient-1))",
+        g3: "conic-gradient(var(--color-gradient-1),var(--color-gradient-3),var(--color-gradient-1),var(--color-gradient-2),var(--color-gradient-1))",
+        g4: "conic-gradient(var(--color-gradient-1),var(--color-gradient-3),var(--color-gradient-1),var(--color-gradient-2),var(--color-gradient-1))",
       },
     },
   },

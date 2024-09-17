@@ -6,12 +6,12 @@
     <title>PONGSATHON</title>
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body>
+  <body id="portfolio" class="dark">
     <!--navbar-->
     <nav
       class="navbar w-screen flex-row justify-between items-end flex h-16 bg-primary gap-4 p-4 lg:pr-8"
     >
-      <span class="f3 capitalize font-semibold">
+      <span class="text-2xl md:text-3xl lg:text-4xl capitalize font-semibold">
         <span class="text-black">protfo</span
         ><span class="text-white">lio</span>
       </span>
@@ -38,7 +38,7 @@
       <!--sidebar toggle-->
       <button
         id="mobile-toggle"
-        class="absolute right-4 top-6 aspect-square w-4 flex flex-col justify-around z-[2000] md:hidden"
+        class="absolute fix-btn top-4 flex flex-col justify-around md:hidden"
       >
         <div
           class="burgur shadow-[0_0_0_1px] transition-all duration-300 shadow-white w-full"
@@ -84,18 +84,20 @@
       <section class="hero" id="home">
         <!--text here-->
         <h1
-          class="f1 capitalize text-primary drop-shadow-sm shadow-neutral flex col-start-2 col-span-full row-start-3 row-end-5 sm:row-start-4"
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl capitalize text-primary drop-shadow-sm shadow-neutral flex col-start-2 col-span-full row-start-3 row-end-5 sm:row-start-4"
         >
           pongsathon
         </h1>
-        <div class="flex f2 capitalize col-start-3 col-span-full row-start-5">
+        <div
+          class="flex text-3xl sm:text-4xl md:text-5xl lg:text-6xl capitalize col-start-3 col-span-full row-start-5"
+        >
           <p class="text-primary drop-shadow-sm shadow-neutral">
             a web <em class="text-neutral">developer.</em>
           </p>
         </div>
         <!--leftlower pic-->
         <div
-          class="col-start-10 col-span-3 row-start-6 row-span-full -z-20 rounded-full hero-g3 animate-spin-slow-delay1"
+          class="col-start-10 col-span-3 row-start-6 row-span-full -z-20 rounded-full bg-g3 blur-lg animate-spin-slow-delay1"
         ></div>
         <img
           src="../asset/hero/hero-1.png"
@@ -104,22 +106,22 @@
         />
         <!--background object-->
         <div
-          class="flex col-start-1 rounded-full row-start-1 col-end-3 row-end-3 -z-20 hero-g1 animate-spin-slow"
+          class="flex col-start-1 rounded-full row-start-1 col-end-3 row-end-3 -z-20 bg-g1 blur-lg animate-spin-slow"
         ></div>
         <!--
           <div
-          class="flex col-start-4 rounded-full row-start-4 col-end-7 row-end-7 -z-20 hero-g1 animate-spin-slow-delay5"
+          class="flex col-start-4 rounded-full row-start-4 col-end-7 row-end-7 -z-20 bg-g1 animate-spin-slow-delay5"
           ></div>
           -->
 
         <div
-          class="flex col-start-8 rounded-full row-start-2 col-end-9 row-end-3 -z-20 hero-g1 animate-pulse-slow"
+          class="flex col-start-8 rounded-full row-start-2 col-end-9 row-end-3 -z-20 bg-g1 blur-lg animate-pulse-slow"
         ></div>
         <div
-          class="flex col-start-1 row-start-7 row-span-2 col-end-3 rounded-tr-full -z-20 hero-g1 animate-pulse-slow"
+          class="flex col-start-1 row-start-7 row-span-2 col-end-3 rounded-tr-full -z-20 bg-g1 blur-lg animate-pulse-slow"
         ></div>
         <div
-          class="flex col-start-12 col-span-full row-start-3 row-end-5 rounded-l-full bg-opacity-20 -z-20 hero-g2"
+          class="flex col-start-12 col-span-full row-start-3 row-end-5 rounded-l-full bg-opacity-20 -z-20 bg-g2 blur-lg"
         ></div>
         <!--background filter-->
         <div
@@ -128,13 +130,13 @@
       </section>
       <!--about-->
       <section class="content" id="about">
-        <h2 class="section-header">about</h2>
+        <h2 class="h-break">about</h2>
         <!--background-->
         <div
           class="flex flex-col items-center gap-large pb-4 border-bot md:flex-row-reverse justify-between"
         >
           <div class="content-ctrl-t-0 md:w-1/2">
-            <h3 class="subheader">background</h3>
+            <h3>background</h3>
             <p class="text-pretty">
               Hi, I'm Pongsathon wongondee, a frontend <em>developer</em> base
               in thailand. Despite medical doctor graduate, I'm passionate about
@@ -152,12 +154,12 @@
         <div class="flex-res gap-large">
           <!-- edu degree-->
           <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
-            <h3 class="subheader">education</h3>
+            <h3>education</h3>
             <p class="capitalize">doctor of medicine, mahidol u.</p>
           </div>
           <!--programing lang-->
           <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
-            <h3 class="subheader">programing</h3>
+            <h3>programing</h3>
             <div class="flex flex-row gap-4">
               <i class="fa-brands fa-square-js icon"></i>
               <i class="fa-brands fa-python icon"></i>
@@ -177,111 +179,15 @@
       </section>
       <!--skill-->
       <section class="content" id="skill">
-        <h2 class="section-header">project</h2>
-
-        <!--project 1-->
-        <div class="project">
-          <div class="img-slider">
-            <img src="../asset/placeholder.jpg" />
-          </div>
-          <div class="left-section">
-            <div class="card-item">
-              <a href="./notfoun.html">
-                <!--top section-->
-                <div class="head">
-                  <h4>golden</h4>
-                  <div>
-                    <span>MORE</span>
-                    <i
-                      class="fa-solid fa-chevron-right text-sm animate-next"
-                    ></i>
-                  </div>
-                </div>
-                <p>
-                  This is web application to serve backoffice management running
-                  on <em>Angular</em>. purpose. My client, a family gold
-                  bussiness, has a pain point from previous software. Click to
-                  see more.
-                </p>
-
-                <div class="chip-container">
-                  <div class="chip red">angular</div>
-                  <div class="chip blue">typescript</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!--project 2-->
-        <div class="project">
-          <div class="img-slider">
-            <img src="../asset/placeholder.jpg" />
-          </div>
-          <div class="left-section flex flex-col gap-8 md:w-2/3">
-            <div class="card-item">
-              <a href="./notfoun.html">
-                <!--head-->
-                <div class="head">
-                  <h4>demo sandbox project</h4>
-                  <div>
-                    <span>MORE</span>
-                    <i
-                      class="fa-solid fa-chevron-right text-sm animate-next"
-                    ></i>
-                  </div>
-                </div>
-                <!--content-->
-                <p>
-                  This is my final sandbox project from skoodio web development
-                  bootcamp. Focus on web and web application. Click to see more.
-                </p>
-                <div class="chip-container">
-                  <div class="chip">python</div>
-                  <div class="chip blue">react</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!--project 3-->
-        <div class="project">
-          <div class="img-slider">
-            <img src="../asset/placeholder.jpg" alt="" />
-          </div>
-          <div class="left-section">
-            <div class="card-item">
-              <a href="./notfoun.html">
-                <!--head-->
-                <div class="flex justify-between">
-                  <h4>Demo easy e-commerce</h4>
-                  <div class="flex flex-row justify-center items-center">
-                    <span>MORE</span>
-                    <i
-                      class="fa-solid fa-chevron-right text-sm animate-next"
-                    ></i>
-                  </div>
-                </div>
-                <!--content-->
-                <p>
-                  This is my demo project on landing page and backoffice
-                  management. Tech stack are <em>react</em> as UI framework and
-                  <em>firebase</em> as a backend. Click to see more.
-                </p>
-                <div class="chip-container">
-                  <div class="chip blue">react</div>
-                  <div class="chip yellow">firebase</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+        <h2 class="h-break">project</h2>
+        <!--render project here-->
       </section>
       <section id="contact" class="content">
-        <h2 class="section-header">contact</h2>
+        <h2 class="h-break">contact</h2>
         <div class="flex-res gap-large">
           <!--contact info-->
           <div class="content-ctrl flex-1 bg-primary-2/40 rounded-md mx-4">
-            <h2 class="f3 capitalize font-medium">pongsathon wongondee</h2>
+            <h2 class="font-medium">pongsathon wongondee</h2>
             <div>
               <!--location-->
               <p>
@@ -311,7 +217,7 @@
           </div>
           <!--form-->
           <div class="flex-1 content-ctrl-x">
-            <h3 class="subheader">get in touch</h3>
+            <h3>get in touch</h3>
             <form id="contact-form">
               <input
                 type="text"
@@ -341,7 +247,18 @@
         </div>
       </section>
     </main>
-
+    <button
+      id="theme-btn"
+      class="fixed fix-btn bottom-6 rounded-full border border-neutral overflow-hidden bg-secondary lg:size-12"
+    >
+      <div
+        id="theme-indicator"
+        class="w-16 h-8 text-xl text-neutral rounded-3xl -translate-x-1/2 flex justify-around items-center lg:w-24 lg:h-12 lg:text-3xl transition-all duration-300"
+      >
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </div>
+    </button>
     <footer class="bg-primary flex flex-col justify-between p-4 text-neutral">
       <a
         class="mx-auto"
