@@ -2,37 +2,35 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {
-      colors: {
-        deluge: {
-          DEFAULT: "#7469B6",
-          50: "#E6E4F2",
-          100: "#DAD7EB",
-          200: "#C0BBDE",
-          300: "#A7A0D1",
-          400: "#8D84C3",
-          500: "#7469B6",
-          600: "#574C9B",
-          700: "#423976",
-          800: "#2D2750",
-          900: "#18142A",
-          950: "#0D0B17",
-        },
-        perfume: {
-          DEFAULT: "#BEADFA",
-          50: "#ECE7FE",
-          100: "#DCD3FC",
-          200: "#BEADFA",
-          300: "#9478F7",
-          400: "#6A43F4",
-          500: "#400FF0",
-          600: "#320BBB",
-          700: "#240886",
-          800: "#160551",
-          900: "#08021D",
-          950: "#010002",
-        },
+    colors: {
+      deluge: {
+        DEFAULT: "#7469B6",
+        50: "#E6E4F2",
+        100: "#DAD7EB",
+        200: "#C0BBDE",
+        300: "#A7A0D1",
+        400: "#8D84C3",
+        500: "#7469B6",
+        600: "#574C9B",
+        700: "#423976",
+        800: "#2D2750",
+        900: "#18142A",
+        950: "#0D0B17",
       },
+      white: "#fff",
+      black: "#000",
+      red: "#ef4444",
+      blue: "#3b82f6",
+      amber: "#f59e0b",
+      primary: {
+        DEFAULT: "rgba(var(--color-primary-1)/<alpha-value>)",
+        1: "rgba(var(--color-primary-1)/<alpha-value>)",
+        2: "rgba(var(--color-primary-2)/<alpha-value>)",
+      },
+      secondary: "rgba(var(--color-secondary)/<alpha-value>)",
+      neutral: "rgba(var(--color-neutral)/<alpha-value>)",
+    },
+    extend: {
       keyframes: {
         right: {
           "0%, 100%": {
