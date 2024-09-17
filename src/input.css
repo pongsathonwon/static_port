@@ -77,13 +77,22 @@
     @apply flex flex-col md:flex-row;
   }
   .grid-base {
-    @apply grid grid-cols-[16] grid-rows-9;
+    @apply grid grid-cols-12 grid-rows-8;
   }
   .gap-large {
     @apply gap-8 md:gap-16;
   }
   .gap-small {
     @apply gap-4 md:gap-8;
+  }
+  .content-ctrl {
+    @apply flex flex-col gap-small p-4;
+  }
+  .content-ctrl-t-0 {
+    @apply flex flex-col gap-small px-4 pb-4;
+  }
+  .content-ctrl-x {
+    @apply flex flex-col gap-small px-4;
   }
   .f1 {
     @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
@@ -98,10 +107,6 @@
   }
 
   .f4 {
-    @apply text-xl md:text-2xl lg:text-3xl;
-  }
-
-  .f5 {
     @apply text-lg md:text-xl lg:text-2xl;
   }
 
@@ -111,44 +116,41 @@
 }
 
 @layer components {
+  /*nav bar style*/
   .navbar {
     @apply fixed top-0 left-0 z-[9999];
   }
 
   .nav-link {
-    @apply flex rounded-2xl justify-center p-1 f5 uppercase text-white;
+    @apply flex rounded-2xl justify-center p-1 f4 uppercase text-white;
   }
-
+  /*small screen menu toggle*/
   button#mobile-toggle {
     transform-origin: center;
+    &.close div {
+      &:first-child {
+        @apply absolute translate-y-[.015625rem] rotate-45;
+      }
+      &:nth-child(2) {
+        @apply opacity-0;
+      }
+      &:last-child {
+        @apply absolute -translate-y-[.015625rem] -rotate-45;
+      }
+    }
   }
-
-  button#mobile-toggle.close div:first-child {
-    @apply absolute translate-y-[.015625rem] rotate-45;
-  }
-  button#mobile-toggle.close div:nth-child(2) {
-    @apply opacity-0;
-  }
-  button#mobile-toggle.close div:last-child {
-    @apply absolute -translate-y-[.015625rem] -rotate-45;
-  }
-
+  /*hero section*/
   .hero {
-    @apply aspect-[4/3] grid grid-cols-12 grid-rows-8 overflow-hidden justify-end pt-16;
+    @apply aspect-[4/3] grid-base overflow-hidden justify-end pt-16;
   }
-
+  /*content*/
   .content {
-    @apply p-4 flex flex-col gap-large;
+    @apply px-4 pb-8 flex flex-col gap-large md:pb-16;
   }
 
   .section-header {
     @apply flex flex-row items-center gap-1 capitalize font-bold text-primary after:content-[''] after:h-1 after:flex-1 after:bg-primary f3;
   }
-
-  .card {
-    @apply flex gap-4;
-  }
-
   .subheader {
     @apply text-primary-2 capitalize font-semibold f3;
   }
@@ -161,59 +163,70 @@
     @apply aspect-[16/9] opacity-95 max-h-56;
   }
 
-  .card-item {
-    @apply h-full border-bot hover:border-none;
-  }
-
-  .card-item > a {
-    @apply p1 rounded-md flex flex-col p-4 border-none gap-4 h-full hover:bg-primary-2/40;
-  }
-
-  .card-item > a h4 {
-    @apply subheader;
-  }
-
   .project {
-    @apply flex-res gap-large md:justify-between;
+    @apply flex-res gap-large justify-between;
+    &:nth-child(odd) {
+      @apply md:flex-row-reverse;
+    }
+    .left-section {
+      @apply flex flex-col gap-large md:w-2/3;
+      .card-item {
+        @apply h-full border-bot hover:border-none;
+      }
+      .card-item > a {
+        @apply p1 rounded-md p-4 border-none h-full content-ctrl hover:bg-primary-2/40;
+        div.head {
+          @apply flex justify-between items-center;
+        }
+        h4 {
+          @apply subheader;
+        }
+        p {
+          @apply line-clamp-3 md:line-clamp-none;
+        }
+        .chip-container {
+          @apply flex flex-row justify-end items-center gap-2 mt-auto;
+        }
+      }
+    }
   }
-  .project:nth-child(odd) {
-    @apply md:flex-row-reverse;
-  }
-  .chip-container {
-    @apply flex flex-row justify-end items-center gap-2 mt-auto;
+
+  .icon {
+    @apply f2 hover:scale-110;
   }
 
   .chip {
     @apply py-1 px-3 rounded-3xl bg-primary-1 capitalize p1;
-  }
-
-  .chip.red {
-    @apply bg-red text-neutral;
-  }
-  .chip.yellow {
-    @apply bg-amber text-neutral;
-  }
-
-  .chip.blue {
-    @apply bg-blue text-neutral;
+    &.red {
+      @apply bg-red text-neutral;
+    }
+    &.yellow {
+      @apply bg-amber text-neutral;
+    }
+    &.blue {
+      @apply bg-blue text-neutral;
+    }
   }
 
   .card-item > a:hover .chip {
     @apply bg-secondary text-primary-1;
+    &.red {
+      @apply text-red;
+    }
+    &.yellow {
+      @apply text-amber;
+    }
+    &.blue {
+      @apply text-blue;
+    }
   }
-
-  .card-item > a:hover .chip.red {
-    @apply text-red;
+  /*contact form style*/
+  .social-media {
+    @apply flex flex-row items-center gap-4 mt-auto;
+    a {
+      @apply icon;
+    }
   }
-
-  .card-item > a:hover .chip.yellow {
-    @apply text-amber;
-  }
-
-  .card-item > a:hover .chip.blue {
-    @apply text-blue;
-  }
-
   form {
     @apply flex flex-col gap-2 mt-4 border-bot;
   }

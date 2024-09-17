@@ -79,12 +79,12 @@
     </nav>
 
     <!--main content-->
-    <main class="max-w-screen-xl mx-auto border-x border-neutral/5">
+    <main class="max-w-screen-xl mx-auto border-x border-neutral/10">
       <!--hero section-->
       <section class="hero" id="home">
         <!--text here-->
         <h1
-          class="f1 capitalize text-primary drop-shadow-sm shadow-neutral flex col-start-2 col-span-full row-start-3 row-end-5 lg:row-start-4"
+          class="f1 capitalize text-primary drop-shadow-sm shadow-neutral flex col-start-2 col-span-full row-start-3 row-end-5 sm:row-start-4"
         >
           pongsathon
         </h1>
@@ -131,9 +131,9 @@
         <h2 class="section-header">about</h2>
         <!--background-->
         <div
-          class="flex flex-col items-center gap-8 p-4 border-bot md:flex-row-reverse md:justify-between"
+          class="flex flex-col items-center gap-large pb-4 border-bot md:flex-row-reverse justify-between"
         >
-          <div class="flex flex-col gap-4 md:w-1/2">
+          <div class="content-ctrl-t-0 md:w-1/2">
             <h3 class="subheader">background</h3>
             <p class="text-pretty">
               Hi, I'm Pongsathon wongondee, a frontend <em>developer</em> base
@@ -149,18 +149,18 @@
           ></div>
         </div>
         <!--edu-->
-        <div class="flex flex-col gap-8 md:flex-row md:gap-16">
+        <div class="flex-res gap-large">
           <!-- edu degree-->
-          <div class="flex flex-col gap-4 p-4 justify-start flex-1 border-bot">
+          <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
             <h3 class="subheader">education</h3>
             <p class="capitalize">doctor of medicine, mahidol u.</p>
           </div>
           <!--programing lang-->
-          <div class="flex flex-col gap-4 p-4 justify-start flex-1 border-bot">
+          <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
             <h3 class="subheader">programing</h3>
-            <div class="flex flex-row gap-4 text-5xl">
-              <i class="fa-brands fa-square-js hover:scale-110 ease-out"></i>
-              <i class="fa-brands fa-python hover:scale-110 ease-out"></i>
+            <div class="flex flex-row gap-4">
+              <i class="fa-brands fa-square-js icon"></i>
+              <i class="fa-brands fa-python icon"></i>
             </div>
           </div>
         </div>
@@ -184,20 +184,20 @@
           <div class="img-slider">
             <img src="../asset/placeholder.jpg" />
           </div>
-          <div class="flex flex-col gap-8 md:w-2/3">
+          <div class="left-section">
             <div class="card-item">
               <a href="./notfoun.html">
                 <!--top section-->
-                <div class="flex justify-between">
+                <div class="head">
                   <h4>golden</h4>
-                  <div class="flex flex-row justify-center items-center">
+                  <div>
                     <span>MORE</span>
                     <i
                       class="fa-solid fa-chevron-right text-sm animate-next"
                     ></i>
                   </div>
                 </div>
-                <p class="line-clamp-3 md:line-clamp-none">
+                <p>
                   This is web application to serve backoffice management running
                   on <em>Angular</em>. purpose. My client, a family gold
                   bussiness, has a pain point from previous software. Click to
@@ -221,9 +221,9 @@
             <div class="card-item">
               <a href="./notfoun.html">
                 <!--head-->
-                <div class="flex justify-between">
+                <div class="head">
                   <h4>demo sandbox project</h4>
-                  <div class="flex flex-row justify-center items-center">
+                  <div>
                     <span>MORE</span>
                     <i
                       class="fa-solid fa-chevron-right text-sm animate-next"
@@ -248,7 +248,7 @@
           <div class="img-slider">
             <img src="../asset/placeholder.jpg" alt="" />
           </div>
-          <div class="left-section flex flex-col gap-8 md:w-2/3">
+          <div class="left-section">
             <div class="card-item">
               <a href="./notfoun.html">
                 <!--head-->
@@ -280,10 +280,8 @@
         <h2 class="section-header">contact</h2>
         <div class="flex-res gap-large">
           <!--contact info-->
-          <div
-            class="flex flex-col gap-small p-4 flex-1 bg-primary-2/40 rounded-md mx-4 md:my-4"
-          >
-            <h2 class="f4 capitalize font-medium">pongsathon wongondee</h2>
+          <div class="content-ctrl flex-1 bg-primary-2/40 rounded-md mx-4">
+            <h2 class="f3 capitalize font-medium">pongsathon wongondee</h2>
             <div>
               <!--location-->
               <p>
@@ -299,25 +297,20 @@
             </div>
 
             <!--social media-->
-            <div class="flex flex-row items-center gap-4 mt-auto">
-              <a
-                href="https://github.com/pongsathonwon"
-                target="_blank"
-                class="f3"
-              >
-                <i class="fa-brands fa-github hover:scale-125"></i>
+            <div class="social-media">
+              <a href="https://github.com/pongsathonwon" target="_blank">
+                <i class="fa-brands fa-github"></i>
               </a>
               <a
                 href="https://www.linkedin.com/in/pongsathon-wongondee-6870712b7/?trk=opento_sprofile_details"
                 target="_blank"
-                class="f3"
               >
-                <i class="fa-brands fa-linkedin hover:scale-125"></i>
+                <i class="fa-brands fa-linkedin"></i>
               </a>
             </div>
           </div>
           <!--form-->
-          <div class="flex-1 p-4 flex flex-col gap-4">
+          <div class="flex-1 content-ctrl-x">
             <h3 class="subheader">get in touch</h3>
             <form id="contact-form">
               <input
