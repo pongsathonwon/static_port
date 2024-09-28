@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     {
       title: "golden",
       content:
-        "This is web application to serve backoffice management running on <em>Angular</em>. My client, a family gold bussiness, has a pain point from previous software.",
+        "This is web application to serve backoffice management running on <em>Angular</em>. My client, a family gold business, has a pain point from previous software.",
       tags: [{ name: "angular", color: "chip-red" }],
       img: {
         desktop: {
