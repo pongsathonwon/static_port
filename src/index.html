@@ -6,7 +6,7 @@
     <title>PONGSATHON</title>
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body id="portfolio" class="dark">
+  <body id="portfolio">
     <!--navbar-->
     <nav
       class="navbar w-screen flex-row justify-between items-end flex h-16 bg-primary gap-4 p-4 lg:pr-8"
@@ -82,50 +82,61 @@
     <main class="max-w-screen-xl mx-auto border-x border-neutral/10">
       <!--hero section-->
       <section class="hero" id="home">
-        <!--text here-->
-        <h1
-          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl capitalize text-primary drop-shadow-sm shadow-neutral flex col-start-2 col-span-full row-start-3 row-end-5 sm:row-start-4"
-        >
-          pongsathon
-        </h1>
         <div
-          class="flex text-3xl sm:text-4xl md:text-5xl lg:text-6xl capitalize col-start-3 col-span-full row-start-5"
+          class="flex flex-col justify-center items-center col-start-3 col-span-12 row-span-full md:items-start md:col-start-2 md:col-span-7"
         >
-          <p class="text-primary drop-shadow-sm shadow-neutral">
-            a web <em class="text-neutral">developer.</em>
+          <h1
+            class="text-primary-1 capitalize text-2xl md:text-3xl lg:text-5xl"
+          >
+            pongsathon wongondee
+          </h1>
+          <p
+            class="text-neutral/60 text-xs mt-2 text-center md:text-start md:text-sm"
+          >
+            I'm a software developer focusing on website based in Bangkok
+            Thailand.
           </p>
+          <div>
+            <button
+              class="rounded-md bg-primary-1 text-white text-sm py-1 px-3 mt-8 md:text-base"
+            >
+              resume
+            </button>
+          </div>
         </div>
         <!--leftlower pic-->
-        <div
-          class="col-start-10 col-span-3 row-start-6 row-span-full -z-20 rounded-full bg-g3 blur-lg animate-spin-slow-delay1"
-        ></div>
-        <img
-          src="../asset/hero/hero-1.png"
-          class="col-start-9 col-span-4 row-start-6 row-span-full bg-blend-color-dodge opacity-75 z-30 drop-shadow-2xl shadow-neutral"
-          alt=""
-        />
+        <!--
+  <img
+  src="../asset/hero/hero-1.png"
+  class="col-start-9 col-span-4 row-start-5 row-span-full bg-blend-color-dodge opacity-75 z-30 drop-shadow-2xl shadow-neutral"
+  alt=""
+  />
+  -->
         <!--background object-->
         <div
-          class="flex col-start-1 rounded-full row-start-1 col-end-3 row-end-3 -z-20 bg-g1 blur-lg animate-spin-slow"
+          class="blob col-start-1 rounded-full row-start-1 col-span-2 row-span-2 bg-g1 animate-spin-slow"
         ></div>
         <!--
           <div
-          class="flex col-start-4 rounded-full row-start-4 col-end-7 row-end-7 -z-20 bg-g1 animate-spin-slow-delay5"
+          class="blob col-start-10 rounded-full row-start-2 col-span-1 row-end-3 bg-g1 animate-pulse-slow"
           ></div>
           -->
 
         <div
-          class="flex col-start-8 rounded-full row-start-2 col-end-9 row-end-3 -z-20 bg-g1 blur-lg animate-pulse-slow"
+          class="blob -col-start-7 col-span-3 row-start-2 row-span-3 rounded-full bg-g2"
         ></div>
         <div
-          class="flex col-start-1 row-start-7 row-span-2 col-end-3 rounded-tr-full -z-20 bg-g1 blur-lg animate-pulse-slow"
+          class="blob col-start-1 -row-start-3 row-span-2 col-span-2 rounded-tr-full bg-g1 animate-pulse-slow"
         ></div>
         <div
-          class="flex col-start-12 col-span-full row-start-3 row-end-5 rounded-l-full bg-opacity-20 -z-20 bg-g2 blur-lg"
+          class="blob col-start-8 rounded-full row-start-6 col-span-2 row-span-2 bg-g1 animate-spin-slow-delay5"
+        ></div>
+        <div
+          class="blob -col-start-4 col-span-3 -row-start-4 row-span-3 rounded-full bg-g3 animate-spin-slow-delay1"
         ></div>
         <!--background filter-->
         <div
-          class="flex opacity-80 col-span-full row-span-full -z-10 backdrop-blur-2xl"
+          class="flex opacity-80 col-span-full row-span-full -z-10 filter backdrop-blur-2xl"
         ></div>
       </section>
       <!--about-->
@@ -133,9 +144,9 @@
         <h2 class="h-break">about</h2>
         <!--background-->
         <div
-          class="flex flex-col items-center gap-large pb-4 border-bot md:flex-row-reverse justify-between"
+          class="flex flex-col items-center gap-small pb-4 border-bot md:flex-row-reverse justify-between"
         >
-          <div class="content-ctrl-t-0 md:w-1/2">
+          <div class="content-ctrl-t-0 flex-1">
             <h3>background</h3>
             <p class="text-pretty">
               Hi, I'm Pongsathon wongondee, a frontend <em>developer</em> base
@@ -145,17 +156,32 @@
               together.
             </p>
           </div>
-
-          <div
-            class="size-64 rounded-full aspect-square bg-avatar bg-cover mx-auto"
-          ></div>
+          <!--picture-->
+          <div class="w-full flex-1 grid grid-cols-3 grid-rows-3">
+            <div class="row-span-full col-span-full pb-4 z-10">
+              <div
+                class="rounded-full bg-avatar bg-cover mx-auto size-64 md:size-72 z-10 border-8 border-secondary"
+              ></div>
+            </div>
+            <div
+              class="bg-primary-2/10 col-span-full row-start-2 row-span-full rounded-md"
+            ></div>
+          </div>
         </div>
         <!--edu-->
-        <div class="flex-res gap-large">
+        <div class="flex-res gap-small">
           <!-- edu degree-->
           <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
             <h3>education</h3>
             <p class="capitalize">doctor of medicine, mahidol u.</p>
+          </div>
+          <!--other course-->
+          <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
+            <h3>courses</h3>
+            <div class="capitalize">
+              <p>web dev bootcamp by Skooldio</p>
+              <p>road to data engineer by DATA TH</p>
+            </div>
           </div>
           <!--programing lang-->
           <div class="content-ctrl-t-0 gap-large flex-1 border-bot">
@@ -186,7 +212,7 @@
         <h2 class="h-break">contact</h2>
         <div class="flex-res gap-large">
           <!--contact info-->
-          <div class="content-ctrl flex-1 bg-primary-2/40 rounded-md mx-4">
+          <div class="content-ctrl flex-1 bg-primary-2/10 rounded-md mx-4">
             <h2 class="font-medium">pongsathon wongondee</h2>
             <div>
               <!--location-->
@@ -238,7 +264,7 @@
 
               <button
                 type="submit"
-                class="mx-auto uppercase my-4 chip w-full text-white bg-primary"
+                class="uppercase rounded-md bg-primary-1 w-full h-9 py-1 text-white my-3 mt-4 md:mt-8"
               >
                 send
               </button>
@@ -260,11 +286,6 @@
       </div>
     </button>
     <footer class="bg-primary flex flex-col justify-between p-4 text-neutral">
-      <a
-        class="mx-auto"
-        href="https://www.freepik.com/free-photo/3d-render-code-testing-functional-test-usability_34727540.htm#fromView=search&page=2&position=0&uuid=2e35f895-79ca-4d2a-9d46-d6cf6028af3d"
-        >Image by upklyak on Freepik</a
-      >
       <a class="mx-auto" href="https://spline.design/" target="_blank"
         >3D Animation by Spline</a
       >

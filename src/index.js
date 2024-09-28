@@ -18,23 +18,47 @@ window.addEventListener("load", () => {
     {
       title: "golden",
       content:
-        "This is web application to serve backoffice management running on <em>Angular</em>. purpose. My client, a family gold bussiness, has a pain point from previous software.",
+        "This is web application to serve backoffice management running on <em>Angular</em>. My client, a family gold bussiness, has a pain point from previous software.",
       tags: [{ name: "angular", color: "chip-red" }],
+      img: {
+        desktop: {
+          path: "../asset/golden/golden1.png",
+          alt: "destop placeholder img",
+        },
+        mobile: { path: "../asset/golden/golden2.png" },
+      },
     },
     {
-      title: "demon sandbox project",
-      content:
-        "This is my final sandbox project from skoodio web development bootcamp. Focus on web and web application.",
-      tags: [{ name: "react", color: "chip-blue" }],
-    },
-    {
-      title: "Demo easy e-commerce",
+      title: "Demo ecommerce",
       content:
         "This is my demo project on landing page and backoffice management. Tech stack are <em>react</em> as UI framework and <em>firebase</em> as a backend.",
       tags: [
         { name: "react", color: "chip-blue" },
         { name: "firebase", color: "chip-yellow" },
       ],
+      img: {
+        desktop: {
+          path: "../asset/ecommerce/ecommerce1.png",
+          alt: "destop placeholder img",
+        },
+        mobile: { path: "../asset/ecommerce/ecommerce2.png" },
+      },
+    },
+    {
+      title: "Demo backoffice",
+      content:
+        "This is my demo project on CMS. This project focus on manage stocks and users of e-coomerce project. Tech stack are <em>react</em> as UI framework and <em>firebase</em> as a backend.",
+      tags: [
+        { name: "react", color: "chip-blue" },
+        { name: "firebase", color: "chip-yellow" },
+      ],
+      img: {
+        desktop: {
+          path: "../asset/backoffice/backoffice1.png",
+          alt: "destop placeholder img",
+        },
+        mobile: { path: "../asset/backoffice/backoffice2.png" },
+      },
     },
   ];
   const createChip = (tags) => {
@@ -45,28 +69,41 @@ window.addEventListener("load", () => {
     );
     return result;
   };
-  const createProject = ({ title, content, tags }) => {
-    return `        <div class="project">
-              <div class="img-slider">
-                <img src="../asset/placeholder.jpg" />
-              </div>
-              <div class="flex flex-col gap-large md:w-2/3">
+  const createImg = ({ desktop, mobile }) => {
+    return `<div
+            class="grid grid-cols-12 grid-rows-8 p-4 bg-primary-2/10 rounded-md md:w-1/2"
+          >
+            <div
+              class="col-start-1 col-span-full row-start-1 row-span-11 flex items-center"
+            >
+              <img
+                src="${desktop.path}"
+                class="rounded-md shadow-md shadow-primary-2/20"
+                alt="${desktop.alt}"
+              />
+            </div>
+            <div
+              class="col-start-10 col-span-full row-start-1 row-span-full flex items-center"
+            >
+              <img
+                src="${mobile.path}"
+                class="rounded-md shadow-md shadow-primary-2/20"
+                alt="${mobile.alt}"
+              />
+            </div>
+          </div>`;
+  };
+  const createProject = ({ title, content, tags, img }) => {
+    return `<div class="project">
+              ${createImg(img)}
+              <div class="flex flex-col md:w-1/2">
                 <div class="h-full border-bot hover:border-none">
                   <a
-                    class="rounded-md p-4 border-none h-full content-ctrl hover:bg-primary-2/40"
+                    class="rounded-md p-4 border-none h-full flex flex-col hover:bg-primary-2/10"
                     href="./notfoun.html"
                   >
-                    <!--top section-->
-                    <div class="flex justify-between items-center">
-                      <h4>${title}</h4>
-                      <div>
-                        <span>MORE</span>
-                        <i
-                          class="fa-solid fa-chevron-right text-sm animate-next"
-                        ></i>
-                      </div>
-                    </div>
-                    <p class="line-clamp-3 md:line-clamp-none">
+                    <h4>${title}</h4>
+                    <p class="mt-2 mb-4">
                     ${content} Click to
                       see more.
                     </p>

@@ -41,16 +41,18 @@
   .h-break {
     @apply flex flex-row items-center gap-1 after:content-[''] after:h-1 after:flex-1 after:bg-primary;
   }
-
+  .blob {
+    @apply filter blur-lg -z-20;
+  }
   .border-bot {
-    @apply border-b-2 border-primary-2/40;
+    @apply border-b-2 border-primary-2/10;
   }
 
   .flex-res {
     @apply flex flex-col md:flex-row;
   }
   .grid-base {
-    @apply grid grid-cols-12 grid-rows-8;
+    @apply grid grid-cols-[repeat(16,minmax(0,1fr))] grid-rows-9;
   }
   .gap-large {
     @apply gap-8 md:gap-16;
@@ -99,27 +101,28 @@
   }
   /*hero section*/
   .hero {
-    @apply aspect-[4/3] grid-base overflow-hidden justify-end pt-16;
+    @apply aspect-[4/3] md:aspect-[16/9] grid-base overflow-hidden justify-end pt-16;
   }
   /*content*/
   .content {
     @apply px-4 pb-8 flex flex-col gap-large md:pb-16;
   }
-
-  .img-slider {
-    @apply flex flex-row bg-fil overflow-x-hidden rounded-md;
-  }
-
-  .img-slider img {
-    @apply aspect-[16/9] opacity-95 max-h-56;
-  }
-
   .icon {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl hover:scale-110;
   }
 
+  .img-ctrl {
+    @apply grid grid-cols-12 grid-rows-8 md:w-auto flex-1 p-4 bg-primary-2/10 rounded-md;
+  }
+  .img-desktop {
+    @apply col-span-11 row-start-1 row-span-11 flex items-center;
+  }
+  .img-mobile {
+    @apply col-span-3 row-start-1 row-span-full flex items-center;
+  }
+
   .project {
-    @apply flex-res gap-large justify-between;
+    @apply flex-res gap-small justify-between;
     &:nth-child(odd) {
       @apply md:flex-row-reverse;
     }
@@ -127,15 +130,15 @@
 
   .chip {
     @apply py-1 px-3 rounded-3xl bg-primary-1 capitalize;
-    &.chip-red {
-      @apply bg-red text-neutral;
-    }
-    &.chip-yellow {
-      @apply bg-amber text-neutral;
-    }
-    &.chip-blue {
-      @apply bg-blue text-neutral;
-    }
+  }
+  .chip-red {
+    @apply bg-red text-neutral;
+  }
+  .chip-yellow {
+    @apply bg-amber text-neutral;
+  }
+  .chip-blue {
+    @apply bg-blue text-neutral;
   }
 
   a:hover .chip {
@@ -158,11 +161,11 @@
     }
   }
   form {
-    @apply flex flex-col gap-2 mt-4 border-bot;
+    @apply flex flex-col border-bot;
   }
 
   form div {
-    @apply flex justify-between p-1;
+    @apply flex justify-between;
   }
 
   form label {
@@ -170,12 +173,15 @@
   }
 
   form input {
-    @apply rounded-3xl py-1 px-3 border-2 outline-none border-none w-full bg-primary-2/40;
+    @apply rounded-md py-1 px-3 border-2 outline-none border-none w-full bg-primary-2/10;
     &:focus-visible {
       outline: none;
     }
+    &:nth-child(2) {
+      @apply my-2;
+    }
     &:user-valid {
-      @apply bg-primary-2/80;
+      @apply bg-primary-2/10;
     }
   }
 }
