@@ -22,10 +22,10 @@ window.addEventListener("load", () => {
       tags: [{ name: "angular", color: "chip-red" }],
       img: {
         desktop: {
-          path: "../asset/golden/golden1.png",
+          path: "./asset/golden/golden1.png",
           alt: "destop placeholder img",
         },
-        mobile: { path: "../asset/golden/golden2.png" },
+        mobile: { path: "./asset/golden/golden2.png" },
       },
     },
     {
@@ -38,10 +38,10 @@ window.addEventListener("load", () => {
       ],
       img: {
         desktop: {
-          path: "../asset/ecommerce/ecommerce1.png",
+          path: "./asset/ecommerce/ecommerce1.png",
           alt: "destop placeholder img",
         },
-        mobile: { path: "../asset/ecommerce/ecommerce2.png" },
+        mobile: { path: "./asset/ecommerce/ecommerce2.png" },
       },
     },
     {
@@ -54,10 +54,10 @@ window.addEventListener("load", () => {
       ],
       img: {
         desktop: {
-          path: "../asset/backoffice/backoffice1.png",
+          path: "./asset/backoffice/backoffice1.png",
           alt: "destop placeholder img",
         },
-        mobile: { path: "../asset/backoffice/backoffice2.png" },
+        mobile: { path: "./asset/backoffice/backoffice2.png" },
       },
     },
   ];
